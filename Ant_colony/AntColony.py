@@ -2,7 +2,7 @@ import random
 import numpy as np
 
 class AntColony:
-    global_p = 0.002 # pheromone evaporation
+    global_p = 0.001 # pheromone evaporation
     ants = []
 
     def __init__(self, map, num_ants = 200):
@@ -25,7 +25,8 @@ class AntColony:
 class Ant:
     alpha = 2 # weight of feromone
     beta = 3 # weight of path len
-    Q = 300 # relase feromone density
+    Q = 400 # relase feromone density
+    local_p = 0.0001 # pheromone evaporation
     
     def __init__(self, map, init_pos, id):
         self.map = map
@@ -115,10 +116,10 @@ class Ant:
                     self.back_nest = True
                 
         else: #go back to neast, put feromone on path
-
+            num_traveled_road = len(self.traveled_road)
             for i,road in enumerate(self.traveled_road):
                 if matrix[road[0]][road[1]] > 0.0:
-                    matrix[road[0]][road[1]] = matrix[road[0]][road[1]] + (self.Q / self.path_len)#*(i + 1)/(steps)
+                    matrix[road[0]][road[1]] = matrix[road[0]][road[1]] + (self.Q / self.path_len)
             self.respawn("successfully relase feromone and bring back food")
 
         dir = self.pos - pos_prv
