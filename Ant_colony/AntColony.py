@@ -2,7 +2,7 @@ import random
 import numpy as np
 
 class AntColony:
-    global_p = 0.001 # pheromone evaporation
+    global_p = 0.002 # pheromone evaporation
     ants = []
 
     def __init__(self, map, num_ants = 200):
@@ -23,7 +23,7 @@ class AntColony:
                     matrix[i][j] *= (1 - self.global_p)
 
 class Ant:
-    alpha = 3 # weight of feromone
+    alpha = 2 # weight of feromone
     beta = 3 # weight of path len
     Q = 300 # relase feromone density
     
