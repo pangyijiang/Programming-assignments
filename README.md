@@ -5,8 +5,7 @@
 * [Linear regression](https://github.com/pangyijiang/Programming-assignments/tree/master/Linear_regression)
 
 # Ant colony algorithm
-<img src="Ant_colony/result1.gif" width="400" >
-<img src="Ant_colony/result2.png" width="400" >
+<img src="Ant_colony/result1.gif" width="300" ><img src="Ant_colony/result2.png" width="300" >
 
 # Neural network
 Implemented with numpy - manual designed **forward propegation**, **back propegation**, etc.
